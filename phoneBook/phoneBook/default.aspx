@@ -32,7 +32,7 @@
                             <%# string.Format("{0} {1} {2}",Eval("lastname"),Eval("firstname"),Eval("middlename")) %>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:BoundField DataField="birthdate" HeaderText="День рождения" DataFormatString="{0:d}" SortExpression="birthdate" />
+                    <asp:BoundField DataField="birthdate" HeaderText="День рождения" DataFormatString="{0:M}" SortExpression="birthdate" />
                     <asp:BoundField DataField="title" HtmlEncode="false" HeaderText="Описание" SortExpression="title" />
                     <asp:BoundField DataField="company" HtmlEncode="false" HeaderText="Организация" SortExpression="company" />
                     <asp:BoundField DataField="address" HtmlEncode="false" HeaderText="Адрес" SortExpression="address" />
