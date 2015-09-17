@@ -6,49 +6,56 @@
         <ContentTemplate>
             <asp:HiddenField ID="personID" runat="server" />
 
-            <asp:Button ID="ShowAddPersonBtn" runat="server" Text="Добавить контакт"  CssClass="btn btn-sm btn-default" OnClick="ShowAddPersonBtn_Click" />
+            <asp:Button ID="ShowAddPersonBtn" runat="server" Text="Добавить контакт" CssClass="btn btn-sm btn-default" OnClick="ShowAddPersonBtn_Click" />
             <asp:Panel ID="AddPersonPanel" runat="server" CssClass="panel panel-body panel-primary" Visible="false" Style="width: 80%">
                 <form class="form-horizontal">
                     <fieldset>
                         <legend>Новый контакт</legend>
                         <div class="form-group">
-                            <label for="inputEmail" class="col-lg-2 control-label">Фамилия</label>
+                            <label for="lastNameTb" class="col-lg-2 control-label">Фамилия</label>
                             <div class="col-lg-10">
                                 <asp:TextBox ID="lastNameTb" runat="server" CssClass="form-control input-sm" placeholder="Введите фамилию"></asp:TextBox>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputEmail" class="col-lg-2 control-label">Имя</label>
+                            <label for="firstNameTb" class="col-lg-2 control-label">Имя</label>
                             <div class="col-lg-10">
                                 <asp:TextBox ID="firstNameTb" runat="server" CssClass="form-control input-sm" placeholder="Введите имя"></asp:TextBox>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputEmail" class="col-lg-2 control-label">Отчество</label>
+                            <label for="middleNameTb" class="col-lg-2 control-label">Отчество</label>
                             <div class="col-lg-10">
                                 <asp:TextBox ID="middleNameTb" runat="server" CssClass="form-control input-sm" placeholder="Введите отчество"></asp:TextBox>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputEmail" class="col-lg-2 control-label">Описание</label>
+                            <label for="birthDateTb" class="col-lg-2 control-label">Дата рождения</label>
+                            <div class="col-lg-10">
+                                <asp:TextBox ID="birthDateTb" runat="server" CssClass="form-control input-sm" placeholder="Дата рождения"></asp:TextBox>
+                            <ajaxToolkit:CalendarExtender ID="calendarExtender" runat="server" TargetControlID="birthDateTb" Format="dd.MM.yyyy" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="titleTb" class="col-lg-2 control-label">Описание</label>
                             <div class="col-lg-10">
                                 <asp:TextBox ID="titleTb" runat="server" CssClass="form-control input-sm" placeholder="Введите описание"></asp:TextBox>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputEmail" class="col-lg-2 control-label">Организация</label>
+                            <label for="companyTb" class="col-lg-2 control-label">Организация</label>
                             <div class="col-lg-10">
                                 <asp:TextBox ID="companyTb" runat="server" CssClass="form-control input-sm" placeholder="Введите организацию"></asp:TextBox>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputEmail" class="col-lg-2 control-label">Адрес</label>
+                            <label for="addressTb" class="col-lg-2 control-label">Адрес</label>
                             <div class="col-lg-10">
                                 <asp:TextBox ID="addressTb" runat="server" CssClass="form-control input-sm" placeholder="Введите адрес"></asp:TextBox>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputEmail" class="col-lg-2 control-label">Тип контакта</label>
+                            <label for="roleDdl" class="col-lg-2 control-label">Тип контакта</label>
                             <div class="col-lg-10">
                                 <asp:DropDownList ID="roleDdl" runat="server" CssClass="form-control input-sm"></asp:DropDownList>
                             </div>

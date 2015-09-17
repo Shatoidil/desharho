@@ -76,6 +76,24 @@ namespace phoneBook {
         protected global::System.Web.UI.WebControls.TextBox middleNameTb;
         
         /// <summary>
+        /// birthDateTb control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox birthDateTb;
+        
+        /// <summary>
+        /// calendarExtender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.CalendarExtender calendarExtender;
+        
+        /// <summary>
         /// titleTb control.
         /// </summary>
         /// <remarks>

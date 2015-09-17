@@ -104,7 +104,11 @@ namespace phoneBook
 
         protected void AddPersonBtn_Click(object sender, EventArgs e)
         {
-            comm = new MySqlCommand("INSERT INTO person (lastname,firstname,middlename,address,role_id,title,company) VALUES (@lastname,@firstname,@middlename,@address,@role_id,@title,@company)", conn);
+            DateTime dt;
+            string bday = null;
+            if (DateTime.TryParse(birthDateTb.Text, out dt))
+                bday = Convert.ToDateTime(birthDateTb.Text).ToString("yyyy-MM-dd");
+            comm = new MySqlCommand("INSERT INTO person (lastname,firstname,middlename,address,role_id,title,company,birthdate) VALUES (@lastname,@firstname,@middlename,@address,@role_id,@title,@company,@birthdate)", conn);
             comm.Parameters.AddWithValue("@lastname", lastNameTb.Text);
             comm.Parameters.AddWithValue("@firstname", firstNameTb.Text);
             comm.Parameters.AddWithValue("@middlename", middleNameTb.Text);
@@ -112,6 +116,7 @@ namespace phoneBook
             comm.Parameters.AddWithValue("@role_id", roleDdl.SelectedValue);
             comm.Parameters.AddWithValue("@title", titleTb.Text);
             comm.Parameters.AddWithValue("@company", companyTb.Text);
+            comm.Parameters.AddWithValue("@birthdate", bday);
             conn.Open();
             comm.ExecuteNonQuery();
             conn.Close();

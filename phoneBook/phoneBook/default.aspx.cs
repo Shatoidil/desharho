@@ -11,7 +11,7 @@ namespace phoneBook
     public partial class _default : System.Web.UI.Page
     {
 
-        public const string SelectFields = @"SELECT p.lastname,p.firstname,p.middlename,p.title,p.company,p.address,GROUP_CONCAT(ph.phone_type,': ',ph.phone SEPARATOR '<br/>') phones,GROUP_CONCAT(e.email_type,': ',e.email SEPARATOR '<br/>') emails 
+        public const string SelectFields = @"SELECT p.lastname,p.firstname,p.middlename,p.title,p.company,p.address,p.birthdate,GROUP_CONCAT(ph.phone_type,': ',ph.phone SEPARATOR '<br/>') phones,GROUP_CONCAT(e.email_type,': ',e.email SEPARATOR '<br/>') emails 
 FROM person p
 LEFT JOIN phones ph ON ph.person_id = p.id AND ph.active=1
 LEFT JOIN emails e ON e.person_id = p.id AND e.active= 1";
