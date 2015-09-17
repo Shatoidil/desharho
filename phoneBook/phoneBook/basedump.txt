@@ -1,0 +1,68 @@
+-- Adminer 4.2.2 MySQL dump
+
+SET NAMES utf8;
+SET time_zone = '+00:00';
+SET foreign_key_checks = 0;
+SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
+
+DROP TABLE IF EXISTS `emails`;
+CREATE TABLE `emails` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `person_id` int(11) DEFAULT NULL,
+  `email_type` char(38) DEFAULT NULL,
+  `email` char(38) DEFAULT NULL,
+  `active` int(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+DROP TABLE IF EXISTS `person`;
+CREATE TABLE `person` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `lastname` char(128) DEFAULT NULL,
+  `firstname` char(128) DEFAULT NULL,
+  `middlename` char(128) DEFAULT NULL,
+  `title` char(128) DEFAULT NULL,
+  `address` char(128) DEFAULT NULL,
+  `company` char(128) DEFAULT NULL,
+  `active` int(1) NOT NULL DEFAULT '1',
+  `role_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+DROP TABLE IF EXISTS `phones`;
+CREATE TABLE `phones` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `person_id` int(11) DEFAULT NULL,
+  `phone_type` char(38) DEFAULT NULL,
+  `phone` char(38) DEFAULT NULL,
+  `active` int(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+DROP TABLE IF EXISTS `roles`;
+CREATE TABLE `roles` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` char(38) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uname` char(64) NOT NULL,
+  `passmd5` char(128) NOT NULL,
+  `admin` tinyint(1) NOT NULL DEFAULT '0',
+  `view_all` tinyint(1) NOT NULL DEFAULT '0',
+  `role_id` tinyint(1) NOT NULL DEFAULT '0',
+  `active` tinyint(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uname` (`uname`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+-- 2015-09-17 19:06:38
+
