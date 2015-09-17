@@ -32,7 +32,7 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <asp:Button ID="addUserBtn" runat="server" Text="Добавить" CssClass="btn btn-primary" OnClick="addUserBtn_Click" />
+                    <asp:Button ID="addUserBtn" runat="server" Text="Добавить Контакт" CssClass="btn btn-primary" OnClick="addUserBtn_Click" />
                 </td>
             </tr>
         </table>
