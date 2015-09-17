@@ -1,0 +1,55 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="master.master.cs" Inherits="phoneBook.master" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="Content/bootstrap.css" type="text/css" rel="stylesheet" />
+    <title></title>
+    <style>
+        .modalBackground {
+            background-color: Gray;
+            -webkit-filter: alpha(opacity=70);
+            -moz-filter: alpha(opacity=70);
+            -o-filter: alpha(opacity=70);
+            filter: alpha(opacity=70);
+            -ms-opacity: 0.7;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body style="background-color: #949BAA;">
+    <form id="form1" runat="server">
+        <div>
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">Феникс-Контакт</a>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li><a href="default.aspx">Показать</a></li>
+                            <li id="AddPersonLi" runat="server"><a href="addPerson.aspx">Добавить</a></li>
+                            <li id="AdminLi" runat="server"><a href="admin.aspx">Админка</a></li>
+                            <li id="exitLi" runat="server"><asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Выйти</asp:LinkButton></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+            <div class="container-fluid panel panel-default panel-body">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
