@@ -2,34 +2,38 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:Button ID="ShowAddPersonBtn" runat="server" CssClass="btn btn-sm btn-default" Text="Добавить пользователя" OnClick="ShowAddPersonBtn_Click" />
-    <asp:Panel ID="addPersonPanel" runat="server" CssClass="panel panel-default panel-body" Visible="false" style="width:50%">
+    <asp:Panel ID="addPersonPanel" runat="server" CssClass="panel panel-default panel-body" Visible="false" Style="width: 50%">
         <table class="table">
             <tr>
                 <td>Логин</td>
-                <td><asp:TextBox ID="loginTb" runat="server" CssClass="form-control"></asp:TextBox></td>
+                <td>
+                    <asp:TextBox ID="loginTb" runat="server" CssClass="form-control"></asp:TextBox></td>
             </tr>
             <tr>
                 <td>Пароль</td>
-                <td><asp:TextBox ID="passmd5Tb" runat="server" CssClass="form-control"></asp:TextBox></td>
-                
+                <td>
+                    <asp:TextBox ID="passmd5Tb" runat="server" CssClass="form-control"></asp:TextBox></td>
+
             </tr>
             <tr>
                 <td>Видит всё</td>
-                <td><asp:CheckBox ID="viewAllCb" runat="server" /></td>
+                <td>
+                    <asp:CheckBox ID="viewAllCb" runat="server" /></td>
             </tr>
             <tr>
                 <td>Админ</td>
-                <td><asp:CheckBox ID="adminCb" runat="server" /></td>
+                <td>
+                    <asp:CheckBox ID="adminCb" runat="server" /></td>
             </tr>
             <tr>
                 <td>Роль</td>
                 <td>
-                                    <asp:DropDownList ID="roleDdl" runat="server" CssClass="form-control"></asp:DropDownList></td>
+                    <asp:DropDownList ID="roleDdl" runat="server" CssClass="form-control"></asp:DropDownList></td>
             </tr>
             <tr>
                 <td colspan="2">
                     <asp:Button ID="addUserBtn" runat="server" Text="Добавить" CssClass="btn btn-primary" OnClick="addUserBtn_Click" />
-                </td> 
+                </td>
             </tr>
         </table>
     </asp:Panel>
