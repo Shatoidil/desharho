@@ -3,7 +3,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
-            <div class="col-md-5">
+            <div class="page-header" id="banner">
+            <div class="row">
+            <div class="col-lg-12 col-md-7 col-sm-6">
                 <div class="form-group">
                     <div class="input-group">
 
@@ -18,6 +20,8 @@
                     </div>
                 </div>
             </div>
+         </div>
+       </div>
             <asp:GridView
                 ID="ContactGrid"
                 runat="server"
