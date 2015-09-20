@@ -12,7 +12,7 @@ namespace phoneBook
     public partial class WebForm1 : System.Web.UI.Page
     {
 
-        public const string SelectFields = "SELECT id,lastname,firstname,middlename,address,title,company FROM person ";
+        public const string SelectFields = "SELECT id,lastname,firstname,middlename,address,title,company,birthdate FROM person ";
 
         #region Глобальные переменные
         public string CommStr

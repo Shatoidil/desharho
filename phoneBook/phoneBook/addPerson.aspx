@@ -105,6 +105,7 @@
                     <asp:BoundField DataField="lastname" HeaderText="Фамилия" SortExpression="lastname" ControlStyle-CssClass="form-control input-sm" />
                     <asp:BoundField DataField="firstname" HeaderText="Имя" SortExpression="firstname" ControlStyle-CssClass="form-control input-sm" />
                     <asp:BoundField DataField="middlename" HeaderText="Отчество" SortExpression="middlename" ControlStyle-CssClass="form-control input-sm" />
+                    <asp:BoundField DataField="birthdate" HeaderText="Дата Рождения" SortExpression="birthdate" ControlStyle-CssClass="form-control input-sm" />
                     <asp:BoundField DataField="title" HeaderText="Описание" SortExpression="title" ControlStyle-CssClass="form-control input-sm" />
                     <asp:BoundField DataField="company" HeaderText="Организация" SortExpression="company" ControlStyle-CssClass="form-control input-sm" />
                     <asp:BoundField DataField="address" HeaderText="Адрес" SortExpression="address" ControlStyle-CssClass="form-control input-sm" />
@@ -266,5 +267,5 @@
     <asp:SqlDataSource ID="PersonSource" runat="server"
         ConnectionString="<%$ ConnectionStrings:MySQLString %>"
         ProviderName="<%$ ConnectionStrings:MySQLString.ProviderName %>"
-        UpdateCommand="UPDATE person SET lastname=@lastname,firstname=@firstname,middlename=@middlename,address=@address,title=@title,company=@company WHERE id=@id"></asp:SqlDataSource>
+        UpdateCommand="UPDATE person SET lastname=@lastname,firstname=@firstname,middlename=@middlename,address=@address,title=@title,company=@company,birthdate=@birthdate WHERE id=@id"></asp:SqlDataSource>
 </asp:Content>
