@@ -6,19 +6,10 @@
 <head runat="server">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link href="Content/bootstrap.css" type="text/css" rel="stylesheet" />
-    <link href="Content/StylePb.css" rel="stylesheet" />
+    <link href="Content/default.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900' rel='stylesheet' type='text/css'/>
     <title></title>
-    <style>
-        .modalBackground {
-            background-color: Gray;
-            -webkit-filter: alpha(opacity=70);
-            -moz-filter: alpha(opacity=70);
-            -o-filter: alpha(opacity=70);
-            filter: alpha(opacity=70);
-            -ms-opacity: 0.7;
-            opacity: 0.7;
-        }
-    </style>
+ 
 </head>
 <body>
     <form id="form1" runat="server">
@@ -32,7 +23,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#">Феникс[Сотрудники]</a>
+                        <a class="navbar-brand" href="#">Феникс[Контакты]</a>
                     </div>
 
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
