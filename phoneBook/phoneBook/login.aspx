@@ -17,7 +17,7 @@
             <div class="sign" style="width: 300px; position: relative;">
                 <fieldset>
 
-                    <legend>Феникс[Контакты]</legend>
+                    <legend><b>Феникс</b>[Контакты]</legend>
                     <table class="table-wrapper" style="width:100%">
                         <tbody>
                             <tr>

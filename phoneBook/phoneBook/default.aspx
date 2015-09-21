@@ -8,8 +8,9 @@
             <div class="col-lg-12 col-md-7 col-sm-6">
                 <div class="form-group">
                     <div class="input-group">
-
+                       
                         <asp:TextBox ID="findTb" runat="server" CssClass="form-control"></asp:TextBox>
+                         
                         <ajaxToolkit:AutoCompleteExtender ServiceMethod="SearchContact" MinimumPrefixLength="1" CompletionInterval="100" EnableCaching="false" TargetControlID="findTb" ID="AutoCompleteManagerFrom" runat="server" FirstRowSelected="false"></ajaxToolkit:AutoCompleteExtender>
                         <span class="input-group-btn">
                             <asp:Button ID="findBtn" runat="server" Text="Найти" CssClass="btn btn-primary" OnClick="findBtn_Click" />

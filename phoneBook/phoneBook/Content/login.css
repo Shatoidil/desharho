@@ -61,3 +61,8 @@
     padding: 10px 15px;
     max-width: 430px;
   }
+
+ .sign legend {
+    border-top-left-radius: 0px; 
+    border-top-right-radius: 0px;
+  }
