@@ -1,0 +1,23 @@
+-- Adminer 4.2.2 MySQL dump
+
+SET NAMES utf8;
+SET time_zone = '+00:00';
+SET foreign_key_checks = 0;
+SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
+
+CREATE DATABASE `fenixprinters` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `fenixprinters`;
+
+DROP TABLE IF EXISTS `printers`;
+CREATE TABLE `printers` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `printername` char(128) DEFAULT NULL,
+  `ip` char(128) DEFAULT NULL,
+  `location` char(128) DEFAULT NULL,
+  `floor` int(11) DEFAULT NULL,
+  `cab` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+-- 2015-09-21 14:12:14
