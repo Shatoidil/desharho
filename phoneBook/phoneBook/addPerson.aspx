@@ -54,12 +54,27 @@
                                         <asp:TextBox ID="companyTb" runat="server" CssClass="form-control input-sm"></asp:TextBox>
                                     </div>
                                 </div>
-                                <div class="form-group">
+                                  <div class="form-group">
                                     <label for="addressTb" class="col-lg-2 control-label">Адрес</label>
                                     <div class="col-lg-10">
                                         <asp:TextBox ID="addressTb" runat="server" CssClass="form-control input-sm"></asp:TextBox>
                                     </div>
                                 </div>
+                                 <div class="form-group">
+                                    <label for="discriptionTb" class="col-lg-2 control-label">Информация</label>
+                                    <div class="col-lg-10">
+                                        <asp:TextBox ID="discriptionTb" runat="server" CssClass="form-control input-sm"></asp:TextBox>
+                                    </div>
+                                </div>
+                                    <div class="form-group">
+                                    <label for="mateTb" class="col-lg-2 control-label">Помощники</label>
+                                    <div class="col-lg-10">
+                                        <asp:TextBox ID="mateTb" runat="server" CssClass="form-control input-sm"></asp:TextBox>
+                                    </div>
+                                </div>
+                                
+                                
+                              
                                 <div class="form-group">
                                     <label for="roleDdl" class="col-lg-2 control-label">Тип контакта</label>
                                     <div class="col-lg-10">
@@ -116,6 +131,8 @@
 
                             <asp:BoundField DataField="title" HeaderText="Описание" SortExpression="title" ControlStyle-CssClass="form-control input-sm" />
                             <asp:BoundField DataField="company" HeaderText="Организация" SortExpression="company" ControlStyle-CssClass="form-control input-sm" />
+                             <asp:BoundField DataField="mate" HeaderText="Помощники" SortExpression="mate" ControlStyle-CssClass="form-control input-sm" />
+                              <asp:BoundField DataField="discription" HeaderText="Информация" SortExpression="discription" ControlStyle-CssClass="form-control input-sm" />
                             <asp:BoundField DataField="address" HeaderText="Адрес" SortExpression="address" ControlStyle-CssClass="form-control input-sm" />
                             <asp:TemplateField>
                                 <ItemTemplate>
@@ -275,5 +292,5 @@
     <asp:SqlDataSource ID="PersonSource" runat="server"
         ConnectionString="<%$ ConnectionStrings:MySQLString %>"
         ProviderName="<%$ ConnectionStrings:MySQLString.ProviderName %>"
-        UpdateCommand="UPDATE person SET lastname=@lastname,firstname=@firstname,middlename=@middlename,address=@address,title=@title,company=@company,birthdate=@birthdate WHERE id=@id"></asp:SqlDataSource>
+        UpdateCommand="UPDATE person SET lastname=@lastname,firstname=@firstname,middlename=@middlename,address=@address,title=@title,company=@company,birthdate=@birthdate,mate=@mate,discription=@discription WHERE id=@id"></asp:SqlDataSource>
 </asp:Content>

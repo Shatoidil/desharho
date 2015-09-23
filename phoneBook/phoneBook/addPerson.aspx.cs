@@ -12,7 +12,7 @@ namespace phoneBook
     public partial class WebForm1 : System.Web.UI.Page
     {
 
-        public const string SelectFields = "SELECT id,lastname,firstname,middlename,address,title,company,birthdate FROM person ";
+        public const string SelectFields = "SELECT id,lastname,firstname,middlename,address,title,company,birthdate,discription,mate FROM person ";
 
         #region Глобальные переменные
         public string CommStr
@@ -99,6 +99,8 @@ namespace phoneBook
             firstNameTb.Text = string.Empty;
             middleNameTb.Text = string.Empty;
             addressTb.Text = string.Empty;
+            mateTb.Text = string.Empty;
+            discriptionTb.Text = string.Empty;
             AddPersonPanel.Visible = !AddPersonPanel.Visible;
         }
 
@@ -108,7 +110,7 @@ namespace phoneBook
             string bday = null;
             if (DateTime.TryParse(birthDateTb.Text, out dt))
                 bday = Convert.ToDateTime(birthDateTb.Text).ToString("yyyy-MM-dd");
-            comm = new MySqlCommand("INSERT INTO person (lastname,firstname,middlename,address,role_id,title,company,birthdate) VALUES (@lastname,@firstname,@middlename,@address,@role_id,@title,@company,@birthdate)", conn);
+            comm = new MySqlCommand("INSERT INTO person (lastname,firstname,middlename,address,role_id,title,company,birthdate,mate,discription) VALUES (@lastname,@firstname,@middlename,@address,@role_id,@title,@company,@birthdate,@mate,@discription)", conn);
             comm.Parameters.AddWithValue("@lastname", lastNameTb.Text);
             comm.Parameters.AddWithValue("@firstname", firstNameTb.Text);
             comm.Parameters.AddWithValue("@middlename", middleNameTb.Text);
@@ -117,6 +119,8 @@ namespace phoneBook
             comm.Parameters.AddWithValue("@title", titleTb.Text);
             comm.Parameters.AddWithValue("@company", companyTb.Text);
             comm.Parameters.AddWithValue("@birthdate", bday);
+            comm.Parameters.AddWithValue("@discription", discriptionTb.Text);
+            comm.Parameters.AddWithValue("@mate", mateTb.Text);
             conn.Open();
             comm.ExecuteNonQuery();
             conn.Close();
@@ -128,6 +132,8 @@ namespace phoneBook
             addressTb.Text = string.Empty;
             titleTb.Text = string.Empty;
             companyTb.Text = string.Empty;
+            discriptionTb.Text = string.Empty;
+            mateTb.Text = string.Empty;
             AddPersonPanel.Visible = false;
         }
         #endregion
@@ -169,7 +175,7 @@ namespace phoneBook
         public static List<string> SearchContact(string prefixText, int count)
         {
             MySqlConnection conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["MySQLString"].ConnectionString);
-            MySqlCommand comm = new MySqlCommand("SELECT p.lastname,p.firstname FROM person p LEFT JOIN phones ph ON ph.person_id=p.id LEFT JOIN emails e ON e.person_id=p.id WHERE lastname LIKE '" + prefixText + "%' OR firstname LIKE '" + prefixText + "%' OR middlename LIKE '" + prefixText + "%' OR address LIKE '" + prefixText + "%' OR ph.phone LIKE '" + prefixText + "%' OR e.email LIKE '" + prefixText + "%'", conn);
+            MySqlCommand comm = new MySqlCommand("SELECT p.lastname,p.firstname FROM person p LEFT JOIN phones ph ON ph.person_id=p.id LEFT JOIN emails e ON e.person_id=p.id WHERE lastname LIKE '" + prefixText + "%' OR firstname LIKE '" + prefixText + "%' OR middlename LIKE '" + prefixText + "%' OR address LIKE '" + prefixText + "%' OR ph.phone LIKE '" + prefixText + "%' OR e.email LIKE '" + prefixText + "%' OR e.mate LIKE '" + prefixText + "%' OR e.discription LIKE '" + prefixText + "%'", conn);
             List<string> result = new List<string>();
             conn.Open();
             MySqlDataReader reader = comm.ExecuteReader();

@@ -11,7 +11,7 @@ namespace phoneBook
     public partial class _default : System.Web.UI.Page
     {
 
-        public const string SelectFields = @"SELECT p.lastname,p.firstname,p.middlename,p.title,p.company,p.address,p.birthdate,GROUP_CONCAT(ph.phone_type,': ',ph.phone SEPARATOR '<br/>') phones,GROUP_CONCAT(e.email_type,': ',e.email SEPARATOR '<br/>') emails 
+        public const string SelectFields = @"SELECT p.lastname,p.firstname,p.middlename,p.title,p.company,p.address,p.birthdate,p.mate,p.discription, GROUP_CONCAT(ph.phone_type,': ',ph.phone SEPARATOR '<br/>') phones,GROUP_CONCAT(e.email_type,': ',e.email SEPARATOR '<br/>') emails 
 FROM person p
 LEFT JOIN phones ph ON ph.person_id = p.id AND ph.active=1
 LEFT JOIN emails e ON e.person_id = p.id AND e.active= 1";
@@ -74,9 +74,9 @@ LEFT JOIN emails e ON e.person_id = p.id AND e.active= 1";
             MySqlCommand comm;
             CUser user = HttpContext.Current.Session["_usr"] as CUser;
             if (user.admin || user.viewAll)
-                comm = new MySqlCommand("SELECT p.lastname,p.firstname FROM person p LEFT JOIN phones ph ON ph.person_id=p.id LEFT JOIN emails e ON e.person_id=p.id WHERE (p.title LIKE '" + prefixText + "%' OR p.company LIKE '" + prefixText + "%' OR p.lastname LIKE '" + prefixText + "%' OR p.firstname LIKE '" + prefixText + "%' OR p.middlename LIKE '" + prefixText + "%' OR p.address LIKE '" + prefixText + "%' OR ph.phone LIKE '" + prefixText + "%' OR e.email LIKE '" + prefixText + "%') AND p.active=1 AND (ph.active=1 OR ph.active IS NULL) AND (e.active=1 OR e.active IS NULL) GROUP BY p.id", conn);
+                comm = new MySqlCommand("SELECT p.lastname,p.firstname FROM person p LEFT JOIN phones ph ON ph.person_id=p.id LEFT JOIN emails e ON e.person_id=p.id WHERE (p.title LIKE '" + prefixText + "%' OR p.company LIKE '" + prefixText + "%' OR p.lastname LIKE '" + prefixText + "%' OR p.firstname LIKE '" + prefixText + "%' OR p.middlename LIKE '" + prefixText + "%' OR p.address LIKE '" + prefixText + "%' OR ph.phone LIKE '" + prefixText + "%' OR e.email LIKE '" + prefixText + "%' OR p.mate LIKE '" + prefixText + "%' OR p.discription LIKE '" + prefixText + "%') AND p.active=1 AND (ph.active=1 OR ph.active IS NULL) AND (e.active=1 OR e.active IS NULL) GROUP BY p.id", conn);
             else
-                comm = new MySqlCommand("SELECT p.lastname,p.firstname FROM person p LEFT JOIN phones ph ON ph.person_id=p.id LEFT JOIN emails e ON e.person_id=p.id WHERE (p.title LIKE '" + prefixText + "%' OR p.company LIKE '" + prefixText + "%' OR p.lastname LIKE '" + prefixText + "%' OR p.firstname LIKE '" + prefixText + "%' OR p.middlename LIKE '" + prefixText + "%' OR p.address LIKE '" + prefixText + "%' OR ph.phone LIKE '" + prefixText + "%' OR e.email LIKE '" + prefixText + "%') AND p.active=1 AND (ph.active=1 OR ph.active IS NULL) AND (e.active=1 OR e.active IS NULL) AND p.role_id=" + user.roleID+ " GROUP BY p.id", conn);
+                comm = new MySqlCommand("SELECT p.lastname,p.firstname FROM person p LEFT JOIN phones ph ON ph.person_id=p.id LEFT JOIN emails e ON e.person_id=p.id WHERE (p.title LIKE '" + prefixText + "%' OR p.company LIKE '" + prefixText + "%' OR p.lastname LIKE '" + prefixText + "%' OR p.firstname LIKE '" + prefixText + "%' OR p.middlename LIKE '" + prefixText + "%' OR p.address LIKE '" + prefixText + "%' OR ph.phone LIKE '" + prefixText + "%' OR e.email LIKE '" + prefixText + "%' OR p.mate LIKE '" + prefixText + "%' OR p.discription LIKE '" + prefixText + "%') AND p.active=1 AND (ph.active=1 OR ph.active IS NULL) AND (e.active=1 OR e.active IS NULL) AND p.role_id=" + user.roleID+ " GROUP BY p.id", conn);
             List<string> result = new List<string>();
             conn.Open();
             MySqlDataReader reader = comm.ExecuteReader();

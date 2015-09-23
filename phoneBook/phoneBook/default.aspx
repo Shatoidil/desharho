@@ -41,8 +41,11 @@
                     <asp:BoundField DataField="title" HtmlEncode="false" HeaderText="Описание" SortExpression="title" />
                     <asp:BoundField DataField="company" HtmlEncode="false" HeaderText="Организация" SortExpression="company" />
                     <asp:BoundField DataField="address" HtmlEncode="false" HeaderText="Адрес" SortExpression="address" />
-                    <asp:BoundField DataField="phones" HtmlEncode="false" HeaderText="Телефоны" SortExpression="phones" />
+                     <asp:BoundField DataField="phones" HtmlEncode="false" HeaderText="Телефоны" SortExpression="phones" />
                     <asp:BoundField DataField="emails" HtmlEncode="false" HeaderText="Email" SortExpression="emails" />
+                    <asp:BoundField DataField="discription" HtmlEncode="false" HeaderText="Информация" SortExpression="discription" />
+                    <asp:BoundField DataField="mate" HtmlEncode="false" HeaderText="Помощники" SortExpression="mate" />
+                   
                 </Columns>
             </asp:GridView>
         </ContentTemplate>
