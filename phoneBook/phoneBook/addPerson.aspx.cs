@@ -118,7 +118,7 @@ namespace phoneBook
             comm.Parameters.AddWithValue("@role_id", roleDdl.SelectedValue);
             comm.Parameters.AddWithValue("@title", titleTb.Text);
             comm.Parameters.AddWithValue("@company", companyTb.Text);
-            comm.Parameters.AddWithValue("@birthdate", bday);
+            comm.Parameters.AddWithValue("@birthdate", birthDateTb.Text);
             comm.Parameters.AddWithValue("@discription", discriptionTb.Text);
             comm.Parameters.AddWithValue("@mate", mateTb.Text);
             conn.Open();
@@ -132,6 +132,7 @@ namespace phoneBook
             addressTb.Text = string.Empty;
             titleTb.Text = string.Empty;
             companyTb.Text = string.Empty;
+            birthDateTb.Text = string.Empty;
             discriptionTb.Text = string.Empty;
             mateTb.Text = string.Empty;
             AddPersonPanel.Visible = false;

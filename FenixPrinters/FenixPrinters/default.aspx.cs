@@ -13,7 +13,8 @@ namespace FenixPrinters
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+                PrinterSource.DataBind();
         }
         MySqlConnection conn;
         MySqlCommand comm;

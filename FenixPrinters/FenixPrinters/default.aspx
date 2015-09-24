@@ -9,6 +9,7 @@
         <div class="col-md-12">
             
             <asp:Repeater ID="Repeater1" runat="server" DataSourceID="PrinterSource">
+
                 <HeaderTemplate>
                     <table id="example" class="table-bordered">
                         <thead>
@@ -20,6 +21,7 @@
                                 <th>Этаж</th>
                                 <th>Кабинет</th>
                                 <th>Редактирование</th>
+
                             </tr>
                         </thead>
                 </HeaderTemplate>
@@ -52,7 +54,7 @@
                         <td>
 
                           <asp:Button ID="DeletePrinter" runat="server" Text="Удалить" OnCommand="DeletePrinter_Click" CommandArgument = '<%# Eval("id") %>'  CssClass="btn btn-danger" />
-
+                             <asp:linkbutton ID="Linkbutton1" commandname="Update" runat="server" text="Update"  CommandArgument='<%# Eval("printername") +"|"+Eval("ip")+"|"+ Eval("location") %>' />
                         </td>
                     </tr>
 

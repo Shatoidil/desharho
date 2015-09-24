@@ -127,7 +127,7 @@
                             <asp:BoundField DataField="firstname" HeaderText="Имя" SortExpression="firstname" ControlStyle-CssClass="form-control input-sm" />
                             <asp:BoundField DataField="middlename" HeaderText="Отчество" SortExpression="middlename" ControlStyle-CssClass="form-control input-sm" />
 
-                            <asp:BoundField DataField="birthdate" HeaderText="Дата Рождения" SortExpression="birthdate" DataFormatString="{0:dd-M-yyyy}" ControlStyle-CssClass="form-control input-sm" />
+                            <asp:BoundField DataField="birthdate" HeaderText="Дата Рождения" SortExpression="birthdate" DataFormatString="{0:d}" ControlStyle-CssClass="form-control input-sm" />
 
                             <asp:BoundField DataField="title" HeaderText="Описание" SortExpression="title" ControlStyle-CssClass="form-control input-sm" />
                             <asp:BoundField DataField="company" HeaderText="Организация" SortExpression="company" ControlStyle-CssClass="form-control input-sm" />
