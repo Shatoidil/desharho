@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+    
         <ContentTemplate>
             <asp:HiddenField ID="personID" runat="server" />
 
@@ -270,7 +270,7 @@
                         </div>
                     </asp:Panel>
         </ContentTemplate>
-    </asp:UpdatePanel>
+
     <asp:SqlDataSource ID="PhoneSource" runat="server"
         ConnectionString="<%$ ConnectionStrings:MySQLString %>"
         ProviderName="<%$ ConnectionStrings:MySQLString.ProviderName %>"
